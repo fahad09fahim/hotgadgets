@@ -21,7 +21,7 @@ const phoneData = async (searchText, isShowAll) => {
       return;
     }
 
-    displayPhones(phones);
+    displayPhones(phones, isShowAll);
   } catch (error) {
     // Handle network or other errors
     console.error(error);
@@ -61,7 +61,7 @@ const displayPhones = (phones, isShowAll) => {
           <h2 class="card-title">${phone.phone_name}</h2>
           <p>There are many variations of passages of available, but the majority have suffered</p>
           <div class="card-actions">
-          <button class="btn bg-[#0D6EFD] text-white"  style="background-color: #0d6efd; color: white; transition: none">Show Details</button>
+          <button class="btn bg-[#0D6EFD] text-white"  style="background-color: #0d6efd; color: white; transition: none" onclick="handleShowDetails('${phone.slug}')">Show Details</button>
           </div>
         </div>
     
@@ -94,4 +94,29 @@ const toggleSpinner = (isLoading) => {
 // handle show all button click
 const handleShowAll = () => {
   handleSearch(true);
+};
+
+// handle show details button click
+const handleShowDetails = async (id) => {
+  console.log("clicked", id);
+  const response = await fetch(
+    ` https://openapi.programming-hero.com/api/phone/${id}`
+  );
+  const data = await response.json();
+  const phone = data.data;
+  console.log(phone);
+  showPhoneDetails(phone);
+};
+
+const showPhoneDetails = (phone) => {
+  const showDetails = document.getElementById("phone-details");
+  showDetails.innerHTML = `
+<img class="block mx-auto"  src=${phone?.image} alt="" />
+<h1>Name: ${phone?.name}</h1>
+<p>Brand: ${phone?.brand}</p>
+<p>storage: ${phone?.mainFeatures?.storage}</p>
+<p>Display size: ${phone?.mainFeatures?.displaySize}</p>
+<p>Chipset: ${phone?.mainFeatures?.chipSet}</p>
+  `;
+  show_modal_data.showModal();
 };

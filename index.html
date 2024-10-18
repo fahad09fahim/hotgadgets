@@ -93,16 +93,55 @@
             <button
               class="btn bg-[#0D6EFD] text-white"
               style="background-color: #0d6efd; color: white; transition: none"
+              onclick="handleShowAll()"
             >
               Show All
             </button>
           </div>
         </div>
       </section>
+
+      <div>
+        <dialog id="show_modal_data" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <div id="phone-details"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
     </main>
     <!-- footer -->
-    <footer></footer>
+
+    <footer class="footer bg-white text-black p-10">
+      <nav>
+        <h6 class="footer-title">Services</h6>
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Company</h6>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Legal</h6>
+        <a class="link link-hover">Terms of use</a>
+        <a class="link link-hover">Privacy policy</a>
+        <a class="link link-hover">Cookie policy</a>
+      </nav>
+    </footer>
+
     <!-- connect js  -->
     <script src="index.js"></script>
   </body>
 </html>
+

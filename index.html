@@ -16,13 +16,13 @@
     <!-- Header -->
     <header class="mt-10">
       <!-- navBar -->
-      <nav class="flex justify-between items-center px-20">
+      <nav class="flex justify-between items-center px-5 md:px-15 lg:px-20">
         <div>
-          <h1 class="text-2xl font-bold">Hot Gadgets</h1>
+          <h1 class="text-xl lg:text-2xl font-bold">Hot Gadgets</h1>
         </div>
         <div>
           <button
-            class="btn bg-[#0D6EFD] text-white"
+            class="btn btn-sm md:btn-md bg-[#0D6EFD] text-white"
             style="background-color: #0d6efd; color: white; transition: none"
           >
             Sign Up
@@ -30,34 +30,40 @@
         </div>
       </nav>
       <!-- banner -->
-      <div class="text-center">
+      <div class="text-center mt-2">
         <!-- banner text -->
-        <h1 class="text-5xl leading-relaxed">Apple Iphone 13 Pro Max</h1>
-        <h3 class="text-[#706F6F] text-[18px]">
+        <h1 class="text-2xl lg:text-5xl leading-relaxed">
+          Apple Iphone 13 Pro Max
+        </h1>
+        <h3 class="text-[#706F6F] text-[12px] md:text-[18px] mb-2 px-3">
           There are many variations of passages of Lorem Ipsum available, but
           the majority <br />
           have suffered alteration in some form, by injected humou.
         </h3>
         <button
-          class="btn bg-[#0D6EFD] text-white"
+          class="btn btn-sm md:btn-md bg-[#0D6EFD] text-white"
           style="background-color: #0d6efd; color: white; transition: none"
         >
           Buy Now
         </button>
       </div>
       <!-- banner image -->
-      <div class="hidden md:flex justify-center items-center px-11">
+      <div
+        class="flex flex-1 lg:flex justify-center items-center px-2 md:px-11"
+      >
         <img src="./image/wing2.png" alt="" />
         <img src="./image/wing1.png" alt="" />
         <img src="./image/wing2.png" alt="" />
       </div>
       <!-- search section -->
       <div class="text-center my-[95px]">
-        <h1 class="text-4xl leading-loose font-semibold text-black">
+        <h1
+          class="text-2xl lg:text-4xl leading-loose font-semibold text-black mb-4"
+        >
           Search your phone
         </h1>
         <!-- input field -->
-        <div>
+        <div class="flex mx-auto justify-center">
           <input
             id="search-box"
             type="text"
@@ -83,10 +89,12 @@
             class="loading loading-infinity text-cyan-700 loading-lg"
           ></span>
         </div>
-        <div
-          id="phone-container"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 content-center"
-        ></div>
+        <div class="flex justify-center items-center">
+          <div
+            id="phone-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 content-center"
+          ></div>
+        </div>
         <!-- show all button  -->
         <div class="flex justify-center items-center m-10">
           <div id="show-all-container" class="hidden">
@@ -144,4 +152,3 @@
     <script src="index.js"></script>
   </body>
 </html>
-
